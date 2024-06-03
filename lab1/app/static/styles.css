@@ -1,0 +1,60 @@
+body {
+    font-size: 1.25rem;
+}
+
+.avatar {
+    max-width: 100%;
+}
+
+.post {
+    margin-left: 15rem;
+    max-width: 65rem;
+    margin-right: 15rem;
+}
+
+.image-post {
+    display: flex;
+    align-content: center;
+    margin: auto;
+}
+
+.comments {
+    margin-left: 15rem;
+    max-width: 65rem;
+    margin-right: 15rem;
+}
+
+.comments-div {
+    padding: 0.2rem;
+    padding-left: 2rem;
+    background-color: lightgray;
+    margin: 0;
+}
+
+.comments-form {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.comment-frame {
+    margin-left: 15rem;
+    max-width: 65rem;
+    margin-right: 15rem;
+    border: 0.1rem solid lightgray;
+}
+
+.button {
+    background-color: lightskyblue;
+    border: 0.1rem solid rgb(49, 163, 244);
+    border-radius: 0.2rem;
+}
+
+footer {
+    position: fixed;
+    padding: 0.2rem;
+    bottom: 0; left: 0;
+    width: 100%; 
+    background-color: #333; 
+    color: #fff; 
+    text-align: center;
+}

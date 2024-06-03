@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="post">{{ post.title }}</h1>
+    <p class="post">{{ post.author }}, {{ post.date }}</p>
+    <img class="image-post" src="/static/images/{{ post.image_id }}" alt="Image" width="700">
+    <p class="post">{{ post.text }}</p>
+
+    <div class="comment-frame">
+        <h2 class="comments-div">Оставить комментарий:</h2>
+        <form class="comments-form">
+            <textarea rows="4" cols="50" placeholder="Введите ваш комментарий здесь"></textarea><br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+    </div>
+    
+    <h2 class="comments">Комментарии:</h2>
+    <ul>
+        {% for comment in post.comments %}
+        <li class="comments">{{ comment.author }}: {{ comment.text }}</li>
+        {% for reply in comment.replies %}
+            <ul>
+                <li class="comments">{{ reply.author }}: {{ reply.text }}</li>
+            </ul>
+        {% endfor %}
+        {% endfor %}
+    </ul>
+    {% endblock %}
