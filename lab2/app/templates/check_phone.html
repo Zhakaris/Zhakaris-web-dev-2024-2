@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка номера телефона, Лабораторная 2, Жакарис Маргарита</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Проверка номера телефона</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="post">
+            <div class="form-group">
+                <label for="phone_number">Номер телефона</label>
+                <input type="text" class="form-control {% if 'error' in messages %}is-invalid{% endif %}" id="phone_number" name="phone_number" placeholder="Введите номер телефона">
+                {% if 'error' in messages %}
+                    <div class="invalid-feedback">
+                        {% for category, message in messages %}
+                            {% if category == 'error' %}
+                                {{ message }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Подтвердить</button>
+        </form>
+    </div>
+</body>
+</html>

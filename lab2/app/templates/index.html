@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторная 2, Жакарис Маргарита</title>
+</head>
+<body>
+    <h1>Request Parameters</h1>
+    <h2>URL Parameters:</h2>
+    <ul>
+        {% for key, value in params.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Request Headers:</h2>
+    <ul>
+        {% for key, value in headers.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Cookies:</h2>
+    <ul>
+        {% for key, value in cookies.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ url_for('check_phone') }}">Check Phone Number</a>
+</body>
+</html>
